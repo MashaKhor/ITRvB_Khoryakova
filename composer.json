@@ -1,0 +1,17 @@
+{
+    "name": "masha/it-rvb_khoryakova",
+    "autoload": {
+        "psr-4": {
+            "Masha\\ItRvbKhoryakova\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MashaKhor",
+            "email": "144768937+MashaKhor@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "fakerphp/faker": "^1.23"
+    }
+}
