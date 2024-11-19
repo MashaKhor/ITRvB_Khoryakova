@@ -6,6 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Polyfill\\Uuid\\' => array($vendorDir . '/symfony/polyfill-uuid'),
+    'Symfony\\Component\\Uid\\' => array($vendorDir . '/symfony/uid'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Masha\\ItRvbKhoryakova\\' => array($baseDir . '/src'),
     'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),

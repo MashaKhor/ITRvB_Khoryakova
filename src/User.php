@@ -1,14 +1,18 @@
 <?php
 
+namespace ITRvB_Khoryakova\lesson4;
+
+use Faker\Core\Uuid;
+
 class User
 {
-    public $id;
-    public $firstName;
-    public $lastName;
+    public string $uuid;
+    public string $firstName;
+    public string $lastName;
 
-    public function __construct($id, $firstName, $lastName)
+    public function __construct($uuid, $firstName, $lastName)
     {
-        $this->id = $id;
+        $this->uuid = $uuid;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
     }

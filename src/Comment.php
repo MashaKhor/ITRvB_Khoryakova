@@ -1,17 +1,21 @@
 <?php
 
+namespace ITRvB_Khoryakova\lesson4;
+
+use Faker\Core\Uuid;
+
 class Comment
 {
-    public $id;
-    public $authorId;
-    public $articleId;
-    public $text;
+    public string $uuid;
+    public string $authorUuid;
+    public string $articleUuid;
+    public string $text;
 
-    public function __construct($id, $authorId, $articleId, $text)
+    public function __construct($uuid, $authorUuid, $articleUuid, $text)
     {
-        $this->id = $id;
-        $this->authorId = $authorId;
-        $this->articleId = $articleId;
+        $this->uuid = $uuid;
+        $this->authorUuid = $authorUuid;
+        $this->articleUuid = $articleUuid;
         $this->text = $text;
     }
 }

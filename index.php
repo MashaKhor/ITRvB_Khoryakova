@@ -1,20 +1,61 @@
-<?php 
-    require 'autoload.php';
-    require 'vendor/autoload.php';
+<?php
 
-    use User as User;
-    use Comment as Comment;
-    use Article as Article;
-    use Faker\Factory as Faker;
+use ITRvB_Khoryakova\lesson4\ArticlesRepository;
+use ITRvB_Khoryakova\lesson4\CommentsRepository;
+use ITRvB_Khoryakova\lesson4\Article;
+use ITRvB_Khoryakova\lesson4\Comment;
 
-    $faker = Faker::create();
+require './vendor/autoload.php';
 
-    $user = new User($faker->randomNumber(), $faker->firstName, $faker->lastName);
-    echo "User: {$user->id}, {$user->firstName}, {$user->lastName}<br>";
+$db = new PDO('sqlite:' . __DIR__ . '/db.sqlite');
 
-    $article = new Article($faker->randomNumber(), $user->id, $faker->title, $faker->text);
-    echo "Article: {$article->id}, Author: {$article->authorId}, Title: {$article->title} Content: {$article->content}<br>";
+$db->exec("CREATE TABLE IF NOT EXISTS users (
+    uuid TEXT PRIMARY KEY,
+    firstName TEXT NOT NULL,
+    lastName TEXT NOT NULL
+);");
 
-    $comment = new Comment($faker->randomNumber(), $user->id, $article->id, $faker->text);
-    echo "Comment: {$comment->id}, Author: {$comment->authorId}, Article: {$comment->articleId}, Text: {$comment->text}";
+$db->exec("CREATE TABLE IF NOT EXISTS posts (
+    uuid TEXT PRIMARY KEY,
+    authorUuid TEXT NOT NULL,
+    title TEXT NOT NULL,
+    'text' TEXT NOT NULL,
+    FOREIGN KEY (authorUuid) REFERENCES users(uuid)
+);");
+
+$db->exec("CREATE TABLE IF NOT EXISTS comments (
+    uuid TEXT PRIMARY KEY,
+    authorUuid TEXT NOT NULL,
+    postUuid TEXT NOT NULL,
+    'text' TEXT NOT NULL,
+    FOREIGN KEY (authorUuid) REFERENCES users(uuid),
+    FOREIGN KEY (postUuid) REFERENCES posts(uuid)
+);");
+
+$faker = Faker\Factory::create();
+
+$articlesRepository = new ArticlesRepository($db);
+$commentsRepository = new CommentsRepository($db);
+
+$articleUuid = $faker->uuid();
+$authorUuid = $faker->uuid();
+$commentUuid = $faker->uuid();
+
+$article = new Article();
+$article->uuid = $articleUuid;
+$article->authorUuid = $authorUuid;
+$article->title = 'Заголовок';
+$article->text = 'Текст';
+
+$articlesRepository->save($article);
+$articleDb = $articlesRepository->get($articleUuid);
+
+$comment = new Comment();
+$comment->uuid = $commentUuid;
+$comment->authorUuid = $authorUuid;
+$comment->articleUuid = $articleUuid;
+$comment->text = 'Текст';
+
+$commentsRepository->save($comment);
+$commentDb = $commentsRepository->get($commentUuid);
 ?>
