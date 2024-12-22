@@ -2,7 +2,7 @@
     "name": "masha/it-rvb_khoryakova",
     "autoload": {
         "psr-4": {
-            "Masha\\ItRvbKhoryakova\\": "src/"
+            "ITRvB_Khoryakova\\": "src/"
         }
     },
     "authors": [
@@ -15,7 +15,9 @@
         "fakerphp/faker": "^1.23",
         "symfony/uid": "^7.1",
         "ext-sqlite3": "*",
-        "ext-sqlite": "*",
         "ext-pdo": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
     }
 }

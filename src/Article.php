@@ -1,6 +1,6 @@
 <?php
 
-namespace ITRvB_Khoryakova\lesson4;
+namespace ITRvB_Khoryakova;
 
 use Faker\Core\Uuid;
 
@@ -17,6 +17,26 @@ class Article
         $this->authorUuid = $authorUuid;
         $this->title = $title;
         $this->content = $content;
+    }
+
+    public function getUuid(): string
+    {
+        return $this->uuid;
+    }
+
+    public function getAuthorUuid(): string
+    {
+        return $this->authorUuid;
+    }
+
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    public function getContent(): string
+    {
+        return $this->content;
     }
 }
 

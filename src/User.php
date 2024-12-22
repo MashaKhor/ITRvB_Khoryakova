@@ -1,6 +1,6 @@
 <?php
 
-namespace ITRvB_Khoryakova\lesson4;
+namespace ITRvB_Khoryakova;
 
 use Faker\Core\Uuid;
 

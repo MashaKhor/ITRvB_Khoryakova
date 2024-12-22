@@ -9,6 +9,8 @@ return array(
     'Symfony\\Polyfill\\Uuid\\' => array($vendorDir . '/symfony/polyfill-uuid'),
     'Symfony\\Component\\Uid\\' => array($vendorDir . '/symfony/uid'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
-    'Masha\\ItRvbKhoryakova\\' => array($baseDir . '/src'),
+    'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
+    'ITRvB_Khoryakova\\' => array($baseDir . '/src'),
     'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
+    'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
 );
