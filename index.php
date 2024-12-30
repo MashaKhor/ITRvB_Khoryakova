@@ -16,6 +16,9 @@ if ($requestUri === '/posts/comment' && $requestMethod === 'POST') {
 } else if ($requestUri === '/posts' && $requestMethod === 'DELETE') {
     include 'delete_post.php';
     exit;
+} else if ($requestUri === '/posts/like' && $requestMethod === 'POST') {
+    include 'save_like.php';
+    exit;
 }
 else {
     http_response_code(404);

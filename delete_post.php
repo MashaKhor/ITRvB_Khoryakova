@@ -2,6 +2,8 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+    $db = new PDO('sqlite:db.sqlite');
+    
     parse_str($_SERVER['QUERY_STRING'], $queryParams);
     $postUuid = $queryParams['uuid'] ?? null;
 
