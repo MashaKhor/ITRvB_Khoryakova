@@ -1,0 +1,126 @@
+[22-Dec-2024 16:56:20 UTC] 
+[22-Dec-2024 16:57:07 UTC] 
+[22-Dec-2024 16:57:25 UTC] 
+[22-Dec-2024 16:57:51 UTC] 1
+[22-Dec-2024 16:59:42 UTC] 
+[22-Dec-2024 17:01:39 UTC] 
+[22-Dec-2024 17:04:59 UTC] 
+[22-Dec-2024 17:07:14 UTC] PHP Fatal error:  Uncaught Error: Class "ITRvB_Khoryakova\lesson4\ArticlesRepository" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php:37
+Stack trace:
+#0 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 37
+[22-Dec-2024 17:08:11 UTC] PHP Fatal error:  Uncaught Error: Class "ITRvB_Khoryakova\lesson4\ArticlesRepository" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php:37
+Stack trace:
+#0 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 37
+[22-Dec-2024 17:08:53 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ITRvB_Khoryakova\Article::__construct(), 0 passed in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 44 and exactly 4 expected in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Article.php:14
+Stack trace:
+#0 C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php(44): ITRvB_Khoryakova\Article->__construct()
+#1 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Article.php on line 14
+[22-Dec-2024 17:11:51 UTC] PHP Warning:  require_once(../controllers/CommentController.php): Failed to open stream: No such file or directory in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 6
+[22-Dec-2024 17:11:51 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../controllers/CommentController.php' (include_path='.;C:\php\pear') in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php:6
+Stack trace:
+#0 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 6
+[22-Dec-2024 17:12:25 UTC] PHP Fatal error:  Uncaught Error: Class "ITRvB_Khoryakova\Repositories\CommentsRepository" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php:12
+Stack trace:
+#0 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 12
+[22-Dec-2024 17:13:19 UTC] PHP Fatal error:  Uncaught Error: Class "ITRvB_Khoryakova\Repositories\CommentsRepository" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php:12
+Stack trace:
+#0 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 12
+[22-Dec-2024 17:16:39 UTC] PHP Fatal error:  Uncaught Error: Interface "ITRvB_Khoryakova\Interface\CommentsRepositoryInterface" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Repositories\CommentsRepository.php:10
+Stack trace:
+#0 C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php(7): require_once()
+#1 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Repositories\CommentsRepository.php on line 10
+[22-Dec-2024 17:17:38 UTC] PHP Fatal error:  Uncaught Error: Interface "ITRvB_Khoryakova\Interface\CommentsRepositoryInterface" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Repositories\CommentsRepository.php:14
+Stack trace:
+#0 C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php(7): require_once()
+#1 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Repositories\CommentsRepository.php on line 14
+[22-Dec-2024 17:18:32 UTC] PHP Fatal error:  Uncaught Error: Class "ITRvB_Khoryakova\Repositories\CommentsRepository" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php:14
+Stack trace:
+#0 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 14
+[22-Dec-2024 17:19:42 UTC] PHP Fatal error:  Uncaught Error: Class "ITRvB_Khoryakova\Repositories\CommentsRepository" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php:12
+Stack trace:
+#0 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 12
+[22-Dec-2024 17:20:12 UTC] PHP Fatal error:  Uncaught Error: Class "ITRvB_Khoryakova\Repositories\CommentsRepository" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php:12
+Stack trace:
+#0 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 12
+[22-Dec-2024 17:21:20 UTC] PHP Warning:  Undefined variable $dbConnection in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 22
+[22-Dec-2024 17:21:20 UTC] PHP Fatal error:  Uncaught TypeError: ITRvB_Khoryakova\Repositories\CommentsRepository::__construct(): Argument #1 ($db) must be of type PDO, null given, called in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 22 and defined in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Repositories\CommentsRepository.php:14
+Stack trace:
+#0 C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php(22): ITRvB_Khoryakova\Repositories\CommentsRepository->__construct()
+#1 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Repositories\CommentsRepository.php on line 14
+[22-Dec-2024 17:22:14 UTC] PHP Fatal error:  Uncaught TypeError: ITRvB_Khoryakova\Controllers\CommentController::__construct(): Argument #1 ($db) must be of type PDO, ITRvB_Khoryakova\Repositories\CommentsRepository given, called in C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php on line 24 and defined in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php:13
+Stack trace:
+#0 C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php(24): ITRvB_Khoryakova\Controllers\CommentController->__construct()
+#1 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php on line 13
+[22-Dec-2024 17:23:05 UTC] Array
+(
+    [author_uuid] => author-uuid-test
+    [post_uuid] => success-article-test-222
+    [text] => Тестовый текст комментария
+)
+
+[22-Dec-2024 17:23:05 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Factory" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php:29
+Stack trace:
+#0 C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php(26): ITRvB_Khoryakova\Controllers\CommentController->createComment()
+#1 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php on line 29
+[22-Dec-2024 17:23:10 UTC] Array
+(
+    [author_uuid] => author-uuid-test
+    [post_uuid] => success-article-test-222
+    [text] => Тестовый текст комментария
+)
+
+[22-Dec-2024 17:23:10 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Factory" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php:29
+Stack trace:
+#0 C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php(25): ITRvB_Khoryakova\Controllers\CommentController->createComment()
+#1 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php on line 29
+[22-Dec-2024 17:24:13 UTC] Array
+(
+    [author_uuid] => author-uuid-test
+    [post_uuid] => success-article-test-222
+    [text] => Тестовый текст комментария
+)
+
+[22-Dec-2024 17:24:13 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Factory" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php:41
+Stack trace:
+#0 C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php(25): ITRvB_Khoryakova\Controllers\CommentController->createComment()
+#1 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php on line 41
+[22-Dec-2024 17:25:13 UTC] Array
+(
+    [author_uuid] => author-uuid-test
+    [post_uuid] => success-article-test-222
+    [text] => Тестовый текст комментария
+)
+
+[22-Dec-2024 17:25:13 UTC] PHP Fatal error:  Uncaught Error: Class "Faker\Factory" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php:41
+Stack trace:
+#0 C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php(25): ITRvB_Khoryakova\Controllers\CommentController->createComment()
+#1 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php on line 41
+[22-Dec-2024 17:27:25 UTC] Array
+(
+    [author_uuid] => author-uuid-test
+    [post_uuid] => success-article-test-222
+    [text] => Тестовый текст комментария
+)
+
+[22-Dec-2024 17:27:25 UTC] PHP Fatal error:  Uncaught Error: Class "ITRvB_Khoryakova\Controllers\Comment" not found in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php:35
+Stack trace:
+#0 C:\OSPanel\domains\aaaaaaaaaaaaaaa\index.php(15): ITRvB_Khoryakova\Controllers\CommentController->createComment()
+#1 {main}
+  thrown in C:\OSPanel\domains\aaaaaaaaaaaaaaa\src\Controllers\CommentController.php on line 35
