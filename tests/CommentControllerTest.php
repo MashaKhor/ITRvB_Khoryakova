@@ -6,18 +6,20 @@ use ITRvB_Khoryakova\Repositories\CommentsRepository;
 use ITRvB_Khoryakova\Controllers\CommentController;
 use ITRvB_Khoryakova\Comment;
 use Faker\Factory as Faker;
+use ITRvB_Khoryakova\Repositories\TestLogger;
 use PDO;
 
 class CommentControllerTest extends TestCase {
     public PDO $db;
     public CommentController $controller;
+    private TestLogger $logger;
 
     protected function setUp(): void
     {
         $this->db = new PDO('sqlite:db.sqlite');
         $this->db->exec('DELETE FROM comments WHERE uuid = "test_uuid"');
-
-        $this->controller = new CommentController($this->db);
+        $this->logger = new TestLogger();
+        $this->controller = new CommentController($this->db, $this->logger);
     }
 
     public function testCreateCommentSuccess(): void

@@ -6,17 +6,20 @@ use PHPUnit\Framework\TestCase;
 use ITRvB_Khoryakova\Repositories\CommentsRepository;
 use ITRvB_Khoryakova\Comment;
 use Faker\Factory as Faker;
+use ITRvB_Khoryakova\Repositories\TestLogger;
 use PDO;
 
 class CommentsRepositoryTest extends TestCase {
     public PDO $db;
     private CommentsRepository $repository;
+    private TestLogger $logger;
 
     protected function setUp(): void
     {
         $this->db = new PDO('sqlite:db.sqlite');
         $this->db->exec('DELETE FROM comments WHERE uuid = "test_uuid"');
-        $this->repository = new CommentsRepository($this->db);
+        $this->logger = new TestLogger();
+        $this->repository = new CommentsRepository($this->db, $this->logger);
     }
 
     public function testFindComment() : void {
@@ -36,6 +39,11 @@ class CommentsRepositoryTest extends TestCase {
         $this->assertEquals($authorUuid, $comment->getAuthorUuid());
         $this->assertEquals($articleUuid, $comment->getArticleUuid());
         $this->assertEquals('Тестовый текст', $comment->getText());
+
+        $logs = $this->logger->getLogs();
+        $this->assertCount(1, $logs);
+        $this->assertEquals('INFO', $logs[0]['level']);
+        $this->assertStringContainsString("Comment found: $uuid", $logs[0]['message']);
     }
 
     public function testExceptionFindComment() : void {
@@ -43,6 +51,11 @@ class CommentsRepositoryTest extends TestCase {
         $this->expectExceptionMessage('Комментарий не найден.');
         
         $this->repository->get('uuid-not');
+
+        $logs = $this->logger->getLogs();
+        $this->assertCount(1, $logs);
+        $this->assertEquals('WARNING', $logs[0]['level']);
+        $this->assertStringContainsString("Comment not found: uuid-not", $logs[0]['message']);
     }
 
     public function testSaveArticle() : void {
@@ -61,6 +74,11 @@ class CommentsRepositoryTest extends TestCase {
         $this->assertSame($comment->articleUuid, $result['postUuid']);
         $this->assertSame($comment->text, $result['text']);
         $this->assertSame($comment->authorUuid, $result['authorUuid']);
+
+        $logs = $this->logger->getLogs();
+        $this->assertCount(1, $logs);
+        $this->assertEquals('INFO', $logs[0]['level']);
+        $this->assertStringContainsString("Comment saved: " . $comment->getUuid(), $logs[0]['message']);
     }
 }
 
